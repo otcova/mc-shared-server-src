@@ -1,0 +1,67 @@
+{
+	"name": "mc-shader-server",
+	"version": "1.0.0",
+	"description": "Minecraft shared host",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron-forge start",
+		"dev-bundle": "webpack --mode development",
+		"package": "electron-forge package",
+		"make": "electron-forge make"
+	},
+	"author": "Otcova",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.14.6",
+		"@babel/preset-env": "^7.14.7",
+		"@babel/preset-react": "^7.14.5",
+		"@electron-forge/cli": "^6.0.0-beta.57",
+		"@electron-forge/maker-deb": "^6.0.0-beta.57",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.57",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+		"@electron-forge/maker-zip": "^6.0.0-beta.57",
+		"babel-loader": "^8.2.2",
+		"electron": "^13.1.6",
+		"webpack": "^5.45.1",
+		"webpack-cli": "^4.7.2"
+	},
+	"dependencies": {
+		"electron-squirrel-startup": "^1.0.0",
+		"firebase": "^8.7.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"simple-git": "^2.41.1"
+	},
+	"config": {
+		"forge": {
+			"packagerConfig": {
+				"ignore": [
+					"/src",
+					"/dist/.server"
+				]
+			},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-squirrel",
+					"config": {
+						"name": "mc_shader_server"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-zip",
+					"platforms": [
+						"darwin"
+					]
+				},
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {}
+				},
+				{
+					"name": "@electron-forge/maker-rpm",
+					"config": {}
+				}
+			]
+		}
+	}
+}
