@@ -6,6 +6,7 @@
 	"scripts": {
 		"start": "electron-forge start",
 		"dev-bundle": "webpack --mode development",
+		"bundle": "webpack --mode production",
 		"package": "electron-forge package",
 		"make": "electron-forge make"
 	},
